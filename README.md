@@ -161,7 +161,7 @@ Le pipeline ne traite que les articles dont le résumé est encore absent et au 
 
 La route `GET /api/collect` nécessite l’en-tête `Authorization: Bearer <CRON_SECRET>`. Sans clé, elle répond `401` ; trois appels au maximum sont autorisés par minute et par instance. La route `/api/health` indique seulement si la base et l’IA sont configurées ; elle ne révèle aucune clé.
 
-La collecte planifiée Vercel se trouve dans `vercel.json` et s’exécute une fois par jour autour de 05:00 UTC. Le plan Hobby permet un Cron quotidien, mais l’heure exacte peut varier jusqu’à 59 minutes et l’exécution utilise les quotas Vercel Functions. Hobby est destiné à un usage personnel non commercial ; un média commercial doit choisir un hébergement et un plan adaptés.
+La collecte planifiée Vercel se trouve dans `vercel.json` et vise 00:00 UTC (04:00 à Maurice, UTC+4), une fois par jour. Le plan Hobby permet un Cron quotidien, mais l’heure exacte peut varier jusqu’à 59 minutes et l’exécution utilise les quotas Vercel Functions. Hobby est destiné à un usage personnel non commercial ; un média commercial doit choisir un hébergement et un plan adaptés.
 
 ## Ce que permet un lancement gratuit
 

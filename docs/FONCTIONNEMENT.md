@@ -195,7 +195,7 @@ La comparaison du secret est effectuée en temps constant après validation des 
 
 ### Planification et journaux
 
-`vercel.json` demande une collecte chaque jour à 05:00 UTC. Les tâches Vercel nécessitent que le secret de production soit configuré dans le projet. En local, lancer une collecte manuelle avec la procédure PowerShell documentée dans le [README](../README.md#démarrage-le-plus-simple--docker). Les opérations et erreurs sont disponibles dans les logs de l’application ; les résultats de collecte et d’analyse sont également inscrits dans `processing_logs` quand la base est active.
+`vercel.json` demande une collecte chaque jour à 00:00 UTC (04:00 à Maurice, UTC+4). Sur le plan Hobby, l’heure exacte peut varier jusqu’à 59 minutes. Les tâches Vercel nécessitent que le secret de production soit configuré dans le projet. En local, lancer une collecte manuelle avec la procédure PowerShell documentée dans le [README](../README.md#démarrage-le-plus-simple--docker). Les opérations et erreurs sont disponibles dans les logs de l’application ; les résultats de collecte et d’analyse sont également inscrits dans `processing_logs` quand la base est active.
 
 ### Variables d’environnement
 
