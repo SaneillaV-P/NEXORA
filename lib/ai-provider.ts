@@ -2,7 +2,7 @@ import { z } from "zod";
 
 export type AiProvider = "none" | "gemini" | "anthropic";
 
-const GEMINI_MODEL = "gemini-2.5-flash-lite";
+const GEMINI_MODEL = "gemini-3.5-flash-lite";
 
 export type AiStatus = {
   provider: AiProvider;

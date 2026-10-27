@@ -118,11 +118,11 @@ Les requêtes RSS ont un délai maximal de 12 secondes ; les requêtes unitaires
 
 `AI_PROVIDER` sélectionne un fournisseur ; sa valeur par défaut est `none`. Les valeurs autorisées sont `none`, `gemini` et `anthropic`. Une clé présente sans fournisseur explicitement sélectionné ne déclenche aucun appel. Une valeur invalide est signalée comme erreur de configuration.
 
-- `AI_PROVIDER=gemini` requiert `GEMINI_API_KEY` et utilise le modèle fixe `gemini-2.5-flash-lite`. Le SDK applique un délai de 10 secondes et une seule tentative réseau, sans retries.
+- `AI_PROVIDER=gemini` requiert `GEMINI_API_KEY` et utilise le modèle fixe `gemini-3.5-flash-lite`. Le SDK applique un délai de 10 secondes et une seule tentative réseau, sans retries.
 - `AI_PROVIDER=anthropic` requiert `ANTHROPIC_API_KEY` et utilise `ANTHROPIC_MODEL` ou, à défaut, `claude-haiku-5-5`.
 - `AI_PROVIDER=none` désactive résumés et briefings IA. Il n’y a aucun basculement automatique entre fournisseurs.
 
-Le modèle Gemini est fixé pour éviter de choisir accidentellement un modèle payant. Avant toute utilisation gratuite, vérifier dans AI Studio la disponibilité et les quotas gratuits effectivement applicables au projet. Ne pas activer sa facturation pour éviter qu’un changement de quota ou de modèle puisse occasionner des frais. Les quotas gratuits ne sont pas garantis et peuvent changer. Google indique que les contenus envoyés sur son palier gratuit peuvent être utilisés pour améliorer ses produits ; le pipeline n’envoie que le titre et l’extrait public du flux, pas le texte intégral.
+Le modèle Gemini est fixé pour éviter de choisir accidentellement un autre modèle. Avant activation, vérifier dans AI Studio le tarif et les quotas effectivement applicables au projet. Ne pas activer sa facturation pour éviter qu’un changement de quota ou de modèle puisse occasionner des frais. Les quotas gratuits ne sont pas garantis et peuvent changer. Google indique que les contenus envoyés sur son palier gratuit peuvent être utilisés pour améliorer ses produits ; le pipeline n’envoie que le titre et l’extrait public du flux, pas le texte intégral.
 
 ### Analyse des articles
 

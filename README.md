@@ -131,7 +131,7 @@ Variables principales dans `.env.local` (Node) ou `.env` (Compose) :
 | `POSTGRES_USER`, `POSTGRES_PASSWORD`, `POSTGRES_DB`, `POSTGRES_PORT` | Identifiants et port du PostgreSQL **local Docker uniquement**. |
 | `CRON_SECRET` | Protège la route de collecte. |
 | `AI_PROVIDER` | `none` par défaut ; choisir explicitement `gemini` ou `anthropic` pour activer l’IA. |
-| `GEMINI_API_KEY` | Clé serveur Google AI Studio, utilisée uniquement si `AI_PROVIDER=gemini`. Le modèle `gemini-2.5-flash-lite` est fixé par l’application ; aucun fallback n’est effectué. |
+| `GEMINI_API_KEY` | Clé serveur Google AI Studio, utilisée uniquement si `AI_PROVIDER=gemini`. Le modèle `gemini-3.5-flash-lite` est fixé par l’application ; aucun fallback n’est effectué. |
 | `ANTHROPIC_API_KEY` | Facultative ; utilisée uniquement si `AI_PROVIDER=anthropic`. |
 | `ANTHROPIC_MODEL` | Modèle Anthropic ; par défaut `claude-haiku-5-5`. |
 | `NEXT_PUBLIC_SITE_URL` | URL canonique du déploiement. |
@@ -151,7 +151,7 @@ AI_PROVIDER=gemini
 GEMINI_API_KEY=<cle-privee-Google-AI-Studio>
 ```
 
-L’application utilise `gemini-2.5-flash-lite` sans option de modèle, grounding, outils, nouvelle tentative automatique ni fallback vers un fournisseur payant. Pour rester dans l’offre gratuite, vérifier les quotas actuels du projet dans Google AI Studio et ne pas activer de facturation sur ce projet. Les quotas peuvent évoluer et une limite dépassée laisse les articles en attente ; aucun autre modèle n’est essayé. **La documentation Google indique que les données soumises au palier gratuit peuvent être utilisées pour améliorer ses produits.** Seuls les titres et les extraits publics transmis par les flux sont fournis au modèle.
+L’application utilise `gemini-3.5-flash-lite` sans grounding, outils, nouvelle tentative automatique ni fallback vers un fournisseur payant. Vérifier les quotas et le tarif applicables à ce modèle dans Google AI Studio avant activation ; ne pas activer la facturation pour éviter des frais inattendus. Les quotas peuvent évoluer et une limite dépassée laisse les articles en attente ; aucun autre modèle n’est essayé. **La documentation Google indique que les données soumises au palier gratuit peuvent être utilisées pour améliorer ses produits.** Seuls les titres et les extraits publics transmis par les flux sont fournis au modèle.
 
 Anthropic reste disponible uniquement si on le sélectionne explicitement avec `AI_PROVIDER=anthropic` et une clé valide. Ce fournisseur est payant : ne pas le configurer pour un déploiement strictement à 0 €.
 
